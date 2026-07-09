@@ -7,9 +7,13 @@ import FormRenderer from "./components/FormRenderer";
 function App() {
   const [tab, setTab] = useState<Tab>("builder");
 
-  const storedSchema = () => {
+  const storedSchema = (): FormSchema[] => {
+    try {
     const data = localStorage.getItem("form-schema");
     return data ? JSON.parse(data) : [];
+    } catch {
+      return [];
+    }
   };
   const [formSchema, setFormSchema] = useState<FormSchema[]>(storedSchema);
 

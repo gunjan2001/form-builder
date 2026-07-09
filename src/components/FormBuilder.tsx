@@ -204,6 +204,7 @@ const FormBuilder: React.FC<IFormBuilder> = ({
                         required: e.target.checked,
                       })
                     }
+                    checked={field.required}
                   />{" "}
                   Required
                 </label>
